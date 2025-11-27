@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+
 
 // -----------------------------
 // Tipos
@@ -37,8 +37,8 @@ export default function FarmaciaClient({
   catalogo: Producto[];
 }) {
 
-  const searchParams = useSearchParams();
-  const esKiosko = searchParams.get("kiosk") === "1";
+  
+
 
   const [busqueda, setBusqueda] = useState("");
   const [categoriaActiva, setCategoriaActiva] = useState("Todas");
@@ -279,27 +279,6 @@ export default function FarmaciaClient({
       {/* -------------------------------------- */}
       <div className="pb-40"></div>
 
-      {/* -------------------------------------- */}
-      {/* MODO KIOSKO                             */}
-      {/* -------------------------------------- */}
-      {esKiosko && (
-        <div
-          className="fixed bottom-0 left-0 right-0 z-[9999] px-4 py-3
-                     flex gap-3 justify-center bg-[#1FB4A6] shadow-xl"
-        >
-          <button className="bg-[#2CD4C2] text-white px-4 py-3 rounded-lg font-bold w-full max-w-xs shadow">
-            Imprimir ticket
-          </button>
-
-          <button className="bg-[#11998e] text-white px-4 py-3 rounded-lg font-bold w-full max-w-xs shadow">
-            Pagar e imprimir
-          </button>
-
-          <button className="bg-[#0f766e] text-white px-4 py-3 rounded-lg font-bold w-full max-w-xs shadow">
-            Guardar pedido
-          </button>
-        </div>
-      )}
 
     </div>
   );

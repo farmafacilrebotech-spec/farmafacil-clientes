@@ -8,11 +8,6 @@ export default function BottomNav() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // ============================
-  // 1) Ocultar barra en modo KIOSKO
-  // ============================
-  // Si la URL tiene ?kiosk=1 → oculta la barra completamente
-  if (searchParams.get("kiosk") === "1") return null;
 
   // ============================
   // 2) Ocultar barra en pantallas restringidas
